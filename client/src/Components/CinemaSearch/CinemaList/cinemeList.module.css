@@ -1,0 +1,13 @@
+.cinemaLi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+
+}
+
+.cinemaItem {
+    border: 1px solid tomato;
+    width: calc((100% - 30px) / 2);
+
+}
