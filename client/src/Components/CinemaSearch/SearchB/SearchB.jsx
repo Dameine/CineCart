@@ -1,4 +1,4 @@
-export const SearchB = () => {
+const SearchB = () => {
     const handleSubmit = (event) => {console.log (event.target)}
      return <div>
         <form action="" onSubmit={handleSubmit}>
@@ -7,3 +7,5 @@ export const SearchB = () => {
         </form>
     </div>
 }
+
+export default SearchB

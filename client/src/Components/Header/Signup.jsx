@@ -1,11 +1,11 @@
 import { useState } from "react";
-// import s from '../layout/Header/login.module.css'
+import s from './Login'
 // import { Form, Button, Alert } from "react-bootstrap";
 // import { useMutation } from "@apollo/client";
 // import { NEW_USER } from "../utils/mutations";
 
 const Signup = ({openModalSignup}) => {
-  const [form, setForm] = useState({ name: "", email: "", pasword: "" });
+  const [form, setForm] = useState({ username: "", email: "", password: "" });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -13,6 +13,8 @@ const Signup = ({openModalSignup}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(form);
+    
   };
 
   return (
@@ -59,13 +61,13 @@ const Signup = ({openModalSignup}) => {
           <input
             type="password"
             name="password"
-            placeholder="Your Email"
+            placeholder="password"
             value={form.password}
             required
             onChange={handleChange}
           />
-          <p className="notice" id="email-notice">
-            Email cannot be empty!
+          <p className="notice" id="password-notice">
+          password cannot be empty!
           </p>
           <hr />
           <button type="submit">Submit</button>

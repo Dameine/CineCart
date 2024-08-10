@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Login from "./Login";
-import Signup from '../../Components/Signup'
+import Signup from './Signup'
 import s from "./header.module.css";
+import {Link} from 'react-router-dom'
 
 const Header = () => {
   const [loginIsOpen, setLoginIsOpen] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
               <button type="button" onClick={openModalSignup}> Signup </button>
             </li>
             <li>
-              <button type="button" onClick={openModalSignup}> Favories movies </button>
+          <Link to='/favoritemovies'>Favorite Movies</Link>
             </li>
           </ul>
           {loginIsOpen && <Login openModalLogin={openModalLogin} />}
