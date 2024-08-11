@@ -13,7 +13,8 @@ loggedIn() {
     const token = this.getToken();
 // Check if the token exists and is not expired.
 // If both conditions are met, it returns true, indicating that the user is logged in.
-    return token && !this.isTokenExpired(token) ? true : false;
+    // return token && !this.isTokenExpired(token) ? true : false;
+    return token  ? true : false;
 
 }
 
