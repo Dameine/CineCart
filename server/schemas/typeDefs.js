@@ -1,18 +1,16 @@
 const typeDefs = `
  type Movie {
-    Title: String
-    Poster: String
-    Director: String
-    Genre: String
-    shortPlot: String
-    imdbRating: String
+    movieId: ID
+    title: String
+    poster: String
+    director: String
   }
 
   type User {
     _id: ID
     username: String
     email: String
-    password: String
+    favMovies: [Movie]
   }
 
   type Auth {
@@ -21,12 +19,14 @@ const typeDefs = `
   }
 
   type Query {
-    getMovies: Movie
+    me: User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
+    addMovieToFavorites(movieId: String,title: String, poster: String, director: String): User
+    removeMovieFromFavorites(movieId: ID): User
   }
 `;
 

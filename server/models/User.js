@@ -21,6 +21,14 @@ const userSchema = new Schema({
   },
 
   //Add movies schame here.
+  favMovies: [
+    {
+      movieId: String,
+      title: String,
+      poster: String,
+      director: String
+    }
+  ]
 
 });
 

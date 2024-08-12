@@ -2,6 +2,12 @@
 import decode from 'jwt-decode';
 
 
+//with your actual JWT token
+// const decoded = jwtDecode(token);
+
+// console.log(decoded);
+
+
 class AuthService {
 // This methode decodes the token stored in the local storage,
 // and returns the user profile information.
