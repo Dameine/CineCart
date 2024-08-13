@@ -1,4 +1,19 @@
 .headerContainer {
-    display: flex;
-    gap: 30px;
+    display: flex; /* Use Flexbox */
+    justify-content: space-around; /* Optional: space buttons evenly */
+    align-items: center; /* Center buttons vertically */
+    padding: 10px; 
+}
+
+.headerH1{
+ 
+}
+
+.buttonsList {
+display: flex; /* Use Flexbox */
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0;
+  gap: 20px;
+  margin-top: 20px;
 }

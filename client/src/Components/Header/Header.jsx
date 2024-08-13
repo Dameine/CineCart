@@ -14,8 +14,8 @@ const Header = () => {
     <header>
       <div className="container">
         <div className={s.headerContainer}>
-          <h1>CineCart</h1>
-          <ul>
+          <h1 className={s.headerH1}>CineCart</h1>
+          <ul className={s.buttonsList}>
             {Auth.loggedIn() ? (
               <li>
                 <button onClick={() => {Auth.logout()}}>Logout</button>
