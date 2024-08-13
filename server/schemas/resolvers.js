@@ -1,25 +1,25 @@
 const { User } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
+const axios = require("axios");
 
 const resolvers = {
   Query: {
-    // getMovies: async (_, args) => {
-    //     const apiKey = process.env.API_KEY;
-    //     const query = 'The Matrix';
-    //     const url = `http://www.omdbapi.com/?t=${query}&apikey=${apiKey}`;
-    //     const response = await axios.get(url);
-    //     console.log(response.data);
-    //     const movie = response.data;
-    //         return {
-    //             Title: movie.Title,
-    //             Poster: movie.Poster,
-    //             Director: movie.Director,
-    //             Genre: movie.Genre,
-    //             shortPlot: movie.Plot,
-    //             imdbRating: movie.imdbRating,
-    //         };
+    getMovies: async (_, {query}) => {
+      const apiKey = process.env.API_KEY;
+      const url = `http://www.omdbapi.com/?t=${query}&apikey=${apiKey}`;
+      const response = await axios.get(url);
+      const movie = response.data;
+      return {
+        Title: movie.Title,
+        Poster: movie.Poster,
+        Director: movie.Director,
+        Genre: movie.Genre,
+        shortPlot: movie.Plot,
+        imdbRating: movie.imdbRating,
+        imdbID: movie.imdbID
+      };
 
-    // },
+    },
 
     me: async (parent, arg, context) => {
       if (context.user) {
@@ -70,7 +70,7 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    removeMovieFromFavorites: async (parent, {movieId}, context) => {
+    removeMovieFromFavorites: async (parent, { movieId }, context) => {
       if (context.user) {
         const userData = await User.findOneAndUpdate(
           {_id: context.user._id},
