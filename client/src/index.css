@@ -26,6 +26,11 @@ a:hover {
 }
 body {
   margin: 0;
+    background-image: url(./assets/img/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg);
+  background-size: cover;
+  background-position: absolute;
+  height: 100%; /* Full viewport height */
+  width: 100%; /* Full width */
 }
 
 h1 {
@@ -84,4 +89,11 @@ img {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 15px;
+}
+.background {
+  background-image: url(./assets/img/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg);
+  background-size: cover;
+  background-position: absolute;
+  height: 100%; /* Full viewport height */
+  width: 100%; /* Full width */
 }
