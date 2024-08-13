@@ -72,10 +72,12 @@ const resolvers = {
     },
     removeMovieFromFavorites: async (parent, { movieId }, context) => {
       if (context.user) {
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pullToSet: { favMovies: { movieId } } }
-        )
+        const userData = await User.findOneAndUpdate(
+          {_id: context.user._id},
+          {$pullToSet: {favMovies: {movieId}}},
+          { new: true }
+        );
+        return userData;
       }
     }
   },
