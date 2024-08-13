@@ -45,6 +45,11 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
+// When we query as user, we'll also get another field called 'favoriteMoviesCount' with the number of saved books we have.
+userSchema.virtual('favoriteMoviesCount').get(function() {
+  return this.favMovies.length;
+})
+
 const User = model('User', userSchema);
 
 module.exports = User;

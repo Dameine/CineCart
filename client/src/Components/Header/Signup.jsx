@@ -1,19 +1,57 @@
-import { useState } from "react";
-import s from './Login'
-// import { Form, Button, Alert } from "react-bootstrap";
-// import { useMutation } from "@apollo/client";
-// import { NEW_USER } from "../utils/mutations";
+import { useState, useEffect } from "react";
+import s from './Login.module.css';
+import { Form, Button, Alert } from "react-bootstrap";
+import { useMutation } from "@apollo/client";
+import { NEW_USER } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
+// define a functional component called Signup that receives a prop called openModalSignup.
 const Signup = ({openModalSignup}) => {
-  const [form, setForm] = useState({ username: "", email: "", password: "" });
+  const [userform, setForm] = useState({ username: "", email: "", password: "" });
+  const [addUser, { error }] = useMutation(NEW_USER);
 
+  // useEffect(() => {
+  //   if (error) {
+  //     setShowAlert(true);
+  //   } else {
+  //     setShowAlert(false);
+  //   }
+  // }, [error]);
+  // The handleChange function updates the form state when input values change.
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    // setForm({ 
+    //   ...form, 
+    //   [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...userform, [name]: value });
+    
+
   };
 
+  //The handleSubmit function is called when the form is submitted. 
+  // It prevents the default form behavior, checks form validity, and attempts to add a new user via the mutation.
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    try {
+      const { data } = addUser({
+        variables: { ...userform },
+      });
+      Auth.login(data.addUser.token);
+    }
+    catch (err) {
+      console.error(err);
+    }
+    setForm({ 
+      username: "", 
+      email: "", 
+      password: "" });
+
+    // console.log(userform);
     
   };
 
@@ -27,13 +65,13 @@ const Signup = ({openModalSignup}) => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name="name"
+            name="username"
             placeholder="Your Name"
             required
             onChange={handleChange}
-            value={form.name}
+            value={userform.username}
             onBlur={() => {
-              if (form.name == "") {
+              if (userform.username == "") {
                 document.getElementById("name-notice").style.display = "block";
               } else {
                 document.getElementById("name-notice").style.display = "none";
@@ -41,7 +79,7 @@ const Signup = ({openModalSignup}) => {
             }}
           />
           <p className="notice" id="name-notice">
-            Name cannot be empty!
+            Username cannot be empty!
           </p>
           <hr />
 
@@ -49,7 +87,7 @@ const Signup = ({openModalSignup}) => {
             type="email"
             name="email"
             placeholder="Your Email"
-            value={form.email}
+            value={userform.email}
             required
             onChange={handleChange}
           />
@@ -62,7 +100,7 @@ const Signup = ({openModalSignup}) => {
             type="password"
             name="password"
             placeholder="password"
-            value={form.password}
+            value={userform.password}
             required
             onChange={handleChange}
           />
@@ -70,7 +108,21 @@ const Signup = ({openModalSignup}) => {
           password cannot be empty!
           </p>
           <hr />
-          <button type="submit">Submit</button>
+          {/* <button type="submit">Submit</button> */}
+
+          <Button
+          disabled={
+            !(
+              userform.username &&
+              userform.email &&
+              userform.password
+            )
+          }
+          type="submit"
+          variant="success"
+        >
+          Submit
+        </Button>
         </form>
       </div>
     </div>
