@@ -5,12 +5,9 @@ const axios = require("axios");
 const resolvers = {
   Query: {
     getMovies: async (_, {query}) => {
-      // console.log(args);
       const apiKey = process.env.API_KEY;
-      // const query = 'The Matrix';
       const url = `http://www.omdbapi.com/?t=${query}&apikey=${apiKey}`;
       const response = await axios.get(url);
-      // console.log(response.data);
       const movie = response.data;
       return {
         Title: movie.Title,
