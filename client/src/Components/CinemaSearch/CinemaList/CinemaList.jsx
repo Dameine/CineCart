@@ -1,9 +1,12 @@
 // import {cinema} from "../cinema.js" 
 import s from "./cinemeList.module.css"
 import image from "../../../assets/img/img1.jpg"
+import { useGlobalContext } from "../../../utils/state.jsx";
 
 
 const CinemaList = () => {
+   const {searchResult}  = useGlobalContext();
+   console.log(searchResult);
 
     const cinema = [
         {

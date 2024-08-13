@@ -8,6 +8,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { StateProvider } from './utils/state';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -38,8 +39,10 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
+      <StateProvider>
       <Header />
       <Outlet/>
+      </StateProvider>
     </ApolloProvider>
   )
 }
