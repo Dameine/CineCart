@@ -1,6 +1,7 @@
 .cinemaLi {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
 
 
@@ -8,14 +9,27 @@
 
 .cinemaItem {
     border: 1px solid rgba(255, 255, 255, 0.719);
-    width: calc((100% - 30px) / 2);
+    height: 600px;
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* width: calc((100% - 30px) / 2); */
 
 }
 
-form {
+.cinemaPlot {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+}
+
+/* form {
 margin-left: 240px;
 margin-bottom: 20px;
 width: 100px;
 display: flex;
 gap: 30px;
-}
+} */
