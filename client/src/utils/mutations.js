@@ -30,16 +30,19 @@ mutation addUser($username: String!, $password: String!, $email: String!) {
 `;
 
 export const ADD_MOVIE = gql`
-mutation addMovieToFavorites($movieId: String!, $title: String!, $poster: String!, $director: String!) {
-  addMovieToFavorites(movieId: $movieId, title: $title, poster: $poster, director: $director) {
+mutation AddMovieToFavorites($movie: MovieInput!) {
+  addMovieToFavorites(movie: $movie) {
     _id
-    email
     username
+    email
     favMovies {
-      movieId
-      title
-      poster
-      director
+      Title
+      Poster
+      Director
+      Genre
+      shortPlot
+      imdbRating
+      imdbID
     }
   }
 }

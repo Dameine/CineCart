@@ -23,10 +23,13 @@ const userSchema = new Schema({
   //Add movies schame here.
   favMovies: [
     {
-      movieId: String,
-      title: String,
-      poster: String,
-      director: String
+      Title: String,
+      Poster: String,
+      Director: String,
+      Genre: String,
+      shortPlot: String,
+      imdbRating: String,
+      imdbID: String
     }
   ]
 
