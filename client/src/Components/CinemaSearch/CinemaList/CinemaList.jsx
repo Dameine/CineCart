@@ -1,9 +1,16 @@
 // import {cinema} from "../cinema.js" 
 import s from "./cinemeList.module.css"
 import image from "../../../assets/img/img1.jpg"
+import { useGlobalContext } from "../../../utils/state.jsx";
 
 
+<<<<<<< HEAD
 const CinemaList = ({cinema}) => {
+=======
+const CinemaList = () => {
+   const {searchResult}  = useGlobalContext();
+   console.log(searchResult);
+>>>>>>> ae5d83d531c0f2143cdabcdceb9f7ec329576118
 
 
     return <ul className={s.cinemaLi}>
