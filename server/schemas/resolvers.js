@@ -56,14 +56,15 @@ const resolvers = {
     },
 
     // Adds a movie (identified by its _id) to a user's favorites array using Mongoose's $addToSet operation.
-    addMovieToFavorites: async (parent, args, context) => {
+    addMovieToFavorites: async (parent, {movie}, context) => {
       if (context.user) {
         //  we need to create a variable that will store the userData.
         // We need to find a user and then update that users favMovies array (how do I add something to the end of an array) ***HINT WE ARE USING MONGOOSE
         const userData = await User.findOneAndUpdate(
           { _id: context.user._id }, //FILTER
-          { $addToSet: { favMovies: args } }, //CONTENT TO UPDATE
+          { $addToSet: { favMovies: movie } }, //CONTENT TO UPDATE
           { new: true }
+
         );
 
         return userData;
