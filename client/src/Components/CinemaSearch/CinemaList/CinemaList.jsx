@@ -4,45 +4,28 @@ import image from "../../../assets/img/img1.jpg"
 import { useGlobalContext } from "../../../utils/state.jsx";
 
 
-const CinemaList = () => {
+const CinemaList = ({cinema}) => {
    const {searchResult}  = useGlobalContext();
    console.log(searchResult);
 
-    const cinema = [
-        {
-           id: 1,
-           image: image,
-           title: "Cinema1",
-           description: "FilmDesc",
-        },
-        
-        {
-           id: 2,
-           image: image, 
-           title: "Cinema1",
-           description: "FilmDesc",
-        },
-        {
-           id: 3,
-           image: image, 
-           title: "Cinema1",
-           description: "FilmDesc",
-        },
-        {
-           id: 4,
-           image: image, 
-           title: "Cinema1",
-           description: "FilmDesc",
-        },
-    
-    ]
 
     return <ul className={s.cinemaLi}>
-        {cinema.map(elem => <li key={elem.id} className={s.cinemaItem}>
-            <img src={elem.image} alt={elem.title} />
-            <p>{elem.description}</p>
+        {cinema.map(elem => {
+         return (
+            <li 
+            key={elem.imdbId} 
+            className={s.cinemaItem}
+            style={{
+               // background: "red"
+               backgroundImage: `url(${elem.Poster != "N/A" ? elem.Poster : image})`
+            }}
+            >
+            {/* <img src={elem.Poster != "N/A" ? elem.Poster : image} alt={elem.Title} style={{maxHeight: "300px"}}/> */}
+            <p className={s.cinemaPlot}>{elem.Plot}</p>
             <button type="button">Add to favories movies</button>
             </li>
+         )
+         }
             )}
     </ul>
 }

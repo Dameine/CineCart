@@ -1,0 +1,16 @@
+.cinemaSearchContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* form {
+margin-left: 240px;
+margin-bottom: 20px;
+width: 100px;
+display: flex;
+gap: 30px;
+} */

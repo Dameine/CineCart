@@ -4,6 +4,8 @@ import Signup from "./Signup";
 import s from "./header.module.css";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
+// import SearchB from "../CinemaSearch/SearchB/SearchB";
+
 
 const Header = () => {
   const [loginIsOpen, setLoginIsOpen] = useState(false);
@@ -15,6 +17,9 @@ const Header = () => {
       <div className="container">
         <div className={s.headerContainer}>
           <h1 className={s.headerH1}>CineCart</h1>
+
+          {/* <SearchB /> */}
+
           <ul className={s.buttonsList}>
             {Auth.loggedIn() ? (
               <li>
