@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-import { useState } from "react";
-import s from './login.module.css'
-// import { Form, Button, Alert } from "react-bootstrap";
-// import { useMutation } from "@apollo/client";
-// import { NEW_USER } from "../utils/mutations";
-=======
 import { useState, useEffect } from "react";
 import s from './Login.module.css';
 import { Form, Button, Alert } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { NEW_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
->>>>>>> ae5d83d531c0f2143cdabcdceb9f7ec329576118
 
 // define a functional component called Signup that receives a prop called openModalSignup.
 const Signup = ({openModalSignup}) => {
