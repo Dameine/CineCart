@@ -50,9 +50,14 @@ WHEN I click on the Logout button
 THEN I am logged out of the site and presented with a menu with the options Search for movie and Login/Signup and an input field to search for books and a submit button  
 
 ## Instructions
+This web application is available at: https://cinecart-xtby.onrender.com/. 
+Once a new user has created an account or is logged in to their account on the homepage.
+When logged in, the user will be able to search for a movie and add the movie they like to the list of their favorite movies.
+He has the option to delete the movie he wants from the list of favorite movies.
 
 
-https://github.com/Dameine/CineCart/blob/main/client/src/assets/img/image_web_app01.png?raw=true
+![alt text](https://github.com/Dameine/CineCart/blob/main/client/src/assets/img/image_web_app01.png?raw=true)
+
 
 
 ## Installation
