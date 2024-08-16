@@ -6,7 +6,7 @@
 }
 
 .headerH1{
- 
+ color: #6e0000;
 }
 
 .buttonsList {
@@ -16,4 +16,14 @@ display: flex; /* Use Flexbox */
   margin: 0;
   gap: 20px;
   /* margin-top: 20px; */
+}
+
+.FavoriteHeader {
+  color: #6e0000;
+  margin-left: 307px;
+  font-size: 40px;
+}
+
+.favorite-movies-link{
+  color: #fff;
 }

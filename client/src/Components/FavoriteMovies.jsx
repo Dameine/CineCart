@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from "../Components/FavoriteMovies.module.css";
 import MovieCard from './MovieCard';
-
+import s from "./Header/header.module.css"
 
 
 export default function FavoriteMovies() {
@@ -15,7 +15,7 @@ export default function FavoriteMovies() {
 
     return (
         <div className={styles.container}>
-            <h1>Favorite Movies</h1>
+            <h1 className={s.FavoriteHeader}>Favorite Movies</h1>
             {favorites.length > 0 ? (
                 <ul className={styles.movieGrid}>
                     {favorites.map((movie, index) => (

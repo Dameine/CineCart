@@ -1,3 +1,5 @@
+import s from "../cinemaSearch.module.css";
+
 const SearchB = ({setCinema}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -14,9 +16,9 @@ const SearchB = ({setCinema}) => {
         })
     }
      return <div>
-        <form onSubmit={handleSubmit}>
+        <form className={s.formSearch} onSubmit={handleSubmit}>
             <input type="text" name="searchInput" id="search-input"/>
-            <button type="submit">Search</button>
+            <button className="s.SearchB" type="submit">Search</button>
         </form>
     </div>
 // import { useQuery, useLazyQuery } from "@apollo/client";
