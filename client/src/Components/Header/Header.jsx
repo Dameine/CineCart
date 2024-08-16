@@ -27,18 +27,18 @@ const Header = () => {
           <ul className={s.buttonsList}>
             {Auth.loggedIn() ? (
               <li>
-                <button onClick={() => {Auth.logout()}}>Logout</button>
+                <button className="auth-button logout-button" onClick={() => {Auth.logout()}}>Logout</button>
               </li>
             ) : (
               <>
                 <li>
-                  <button type="button" onClick={openModalLogin}>
+                  <button className="auth-button login-button" type="button" onClick={openModalLogin}>
                     {" "}
                     Log In{" "}
                   </button>
                 </li>
                 <li>
-                  <button type="button" onClick={openModalSignup}>
+                  <button className="auth-button signup-button" type="button" onClick={openModalSignup}>
                     {" "}
                     Signup{" "}
                   </button>
@@ -46,7 +46,7 @@ const Header = () => {
               </>
             )}
             <li>
-              <Link to="/favoritemovies">Favorite Movies</Link>
+              <Link className="favorite-movies-link" to="/favoritemovies">Favorite Movies</Link>
             </li>
           </ul>
           {loginIsOpen && <Login openModalLogin={openModalLogin} />}
