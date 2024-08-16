@@ -14,8 +14,9 @@
 
 ## Motivation
 
-Sometimes we have an idea of the kind of movie we want to watch, but when the moment comes to watch it, we forget.
-If you are one of these people, this app is for you.
+For movie fans like us.
+You sometimes hear or come across a great movie that you want to save in a repertoire to watch at the right time.
+This application is designed to meet that need.
 
 
 ## UserStory
@@ -27,7 +28,6 @@ WHEN I click on the Search for Movie menu option
 THEN I am presented with an input field to search for movie and a submit button
 WHEN I am not logged in and enter a search term in the input field and click the submit button
 THEN I am presented with several search results, each featuring a movie title, author, description and  image.
-
 WHEN the click on Signup button
 THEN I am presented with three inputs for a username, an email address, and a password, and a signup button
 WHEN the click on login button
@@ -52,7 +52,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ## Instructions
 
 
-
+https://github.com/Dameine/CineCart/blob/main/client/src/assets/img/image_web_app01.png?raw=true
 
 
 ## Installation
@@ -70,13 +70,14 @@ This application is licensed under the MIT license.
 
 - Arnaud Tiam, 
 - Solomiia Trachuk, 
-- Dameine Yang 
+- Dameine Yang.
+
 For any contritution you can fork: https://github.com/Dameine/CineCart
 
 
 ## Questions
 For any correction/ contribution, please find the source code on https://github.com/atengelsgjerd/Bootcamp-Buddy. 
 For any questions, please reach out to any of us on:
--arnaudtiam50@gmail.com
--solomiia0403@gmail.com
+-arnaudtiam50@gmail.com,
+-solomiia0403@gmail.com,
 -dameiney123@gmail.com
