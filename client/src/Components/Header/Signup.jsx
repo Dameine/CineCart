@@ -99,13 +99,13 @@ const Signup = ({openModalSignup}) => {
           <input
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="Password"
             value={userform.password}
             required
             onChange={handleChange}
           />
           <p className="notice" id="password-notice">
-          password cannot be empty!
+          Password cannot be empty!
           </p>
           <hr />
           {/* <button type="submit">Submit</button> */}

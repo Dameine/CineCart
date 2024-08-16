@@ -14,3 +14,11 @@ width: 100px;
 display: flex;
 gap: 30px;
 } */
+
+.formSearch {
+    gap: 10px;
+}
+
+.SearchB {
+    gap: 10px;
+}
