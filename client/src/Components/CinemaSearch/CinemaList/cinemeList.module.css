@@ -7,6 +7,11 @@
 
 }
 
+
+.cinemaLi li {
+    width: 30%;
+}
+
 .cinemaItem {
     border: 1px solid rgba(255, 255, 255, 0.719);
     height: 600px;
