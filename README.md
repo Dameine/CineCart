@@ -81,7 +81,7 @@ For any contritution you can fork: https://github.com/Dameine/CineCart
 
 
 ## Questions
-For any correction/ contribution, please find the source code on https://github.com/atengelsgjerd/Bootcamp-Buddy. 
+For any correction/ contribution, please find the source code on https://github.com/Dameine/CineCart. 
 For any questions, please reach out to any of us on:
 
 - arnaudtiam50@gmail.com,
