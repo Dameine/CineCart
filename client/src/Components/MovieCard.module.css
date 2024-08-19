@@ -3,24 +3,23 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    height: 100px;
-
+    height: 50px;
 
 }
 
+
 .cinemaItem {
-    border: 1px solid rgba(255, 255, 255, 0.719);
+    /* border: 1px solid rgba(255, 255, 255, 0.719);
     height: 2000px;
     width: 150px;
     display: flex;
     flex-direction: column;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     /* width: calc((100% - 30px) / 2); */}
 
 .cinemaPlot {
-    background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
 }
 
@@ -28,5 +27,30 @@
 
 
 .MovieCardContainer {
-    height: 100px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
 }
+
+.MovieCardContainer img {
+    position: absolute;
+    z-index: 1;
+}
+
+.MovieCardContainer .details {
+    opacity: 0;
+    position: relative;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.MovieCardContainer .details:hover {
+    opacity: 0.9;
+
+}
+
+.movieBtn {
+    width: 100%;
+}
+
